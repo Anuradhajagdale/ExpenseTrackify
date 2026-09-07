@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ExpenseTrackify</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body class="dark-theme">
+
+<div id="sideMenu" class="side-menu">
+
+    <a href="index.html">🏠 Home</a>
+
+    <a href="transactions.html">💳 Transactions</a>
+
+    <a href="reports.html">📊 Reports</a>
+
+    <a href="calendar.html">🗓 Calendar</a>
+
+    <a href="diary.html">📖 Expense Journal</a>
+
+    <a href="settings.html">⚙ Settings</a>
+
+</div>
+
+<div id="menuOverlay"
+     class="menu-overlay"
+     onclick="closeMenu()">
+</div>
+
+<div class="container">
+
+    <!-- Header -->
+
+    <header class="header">
+
+        <div class="icon" onclick="toggleMenu()">
+
+    <i class="fas fa-bars"></i>
+
+</div>
+
+        <div class="logo">
+            ExpenseTrackify
+        </div>
+
+        <a href="reminders.html" class="icon">
+
+<i class="fas fa-bell"></i>
+
+</a>
+
+    </header>
+
+    <!-- Dashboard -->
+
+    <main class="dashboard">
+
+        <!-- =========================
+             Total Balance Card
+        ========================== -->
+
+        <section class="balance-card">
+
+            <div class="balance-title">
+                Total Balance
+            </div>
+
+            <div class="balance-amount" id="totalBalance">
+                ₹0
+            </div>
+
+            <div class="balance-info">
+
+                <div>
+
+                    <small>Total Income</small>
+
+                    <h3 id="balanceIncome">
+                        ₹0
+                    </h3>
+
+                </div>
+
+                <div>
+
+                    <small>Total Expense</small>
+
+                    <h3 id="balanceExpense">
+                        ₹0
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             Income & Expense Cards
+        ========================== -->
+
+        <section class="summary">
+
+            <div class="summary-card income">
+
+                <div class="small-text">
+
+                    <i class="fas fa-arrow-trend-up"></i>
+
+                    Income
+
+                </div>
+
+                <h2 id="summaryIncome">
+                    ₹0
+                </h2>
+
+            </div>
+
+            <div class="summary-card expense">
+
+                <div class="small-text">
+
+                    <i class="fas fa-arrow-trend-down"></i>
+
+                    Expense
+
+                </div>
+
+                <h2 id="summaryExpense">
+                    ₹0
+                </h2>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             Quick Actions
+        ========================== -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <h3>
+
+                    Quick Actions
+
+                </h3>
+
+            </div>
+
+            <div class="grid-2">
+
+                <a href="add.html" class="card flex-center">
+
+                    <div>
+
+                        <div class="icon">
+
+                            <i class="fas fa-plus"></i>
+
+                        </div>
+
+                        <p class="small-text"
+                           style="margin-top:10px;text-align:center;">
+
+                            Add Transaction
+
+                        </p>
+
+                    </div>
+
+                </a>
+
+<a href="reports.html" class="card flex-center">
+                    <div>
+
+                        <div class="icon">
+
+                            <i class="fas fa-chart-pie"></i>
+
+                        </div>
+
+                        <p class="small-text"
+                           style="margin-top:10px;text-align:center;">
+
+                            View Reports
+
+                        </p>
+
+                    </div>
+
+                </a>
+
+            </div>
+            <a href="diary.html" class="card flex-center">
+
+                <div>
+
+                    <div class="icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+
+                    <p class="small-text"
+                       style="margin-top:10px;text-align:center;">
+
+                        Expense Journal
+
+                    </p>
+
+                </div>
+
+            </a>
+
+        </section>
+                <!-- =========================
+             Expense Analysis
+        ========================== -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <h3>Expense Analysis</h3>
+
+                <a href="reports.html">
+
+    <i class="fas fa-chart-pie"></i>
+
+    <span>Reports</span>
+
+</a>
+
+            </div>
+
+            <div class="chart-card">
+
+                <div class="chart-box">
+
+                    <canvas id="expenseChart"></canvas>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             Recent Transactions
+        ========================== -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <h3>
+
+                    Recent Transactions
+
+                </h3>
+
+                <a href="transactions.html">
+
+                    See All
+
+                </a>
+
+            </div>
+
+            <!-- JavaScript हा भाग Auto Fill करेल -->
+
+            <div id="transactionList">
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+
+                        <i class="fas fa-wallet"></i>
+
+                    </div>
+
+                    <h4>
+
+                        No Transactions Yet
+
+                    </h4>
+
+                    <p>
+
+                        Tap the + button below to add your first Income or Expense.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             Floating Action Button
+        ========================== -->
+
+        <a href="add.html" class="fab" aria-label="Add Transaction">
+
+            <i class="fas fa-plus"></i>
+
+        </a>
+
+    </main>
+
+</div>
+
+<!-- =========================
+     JavaScript
+========================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="js/app.js"></script>
+
+<script src="js/utils.js"></script> 
+
+<script src="js/reminders.js"></script>
+
+<script src="js/chart.js"></script>
+
+
+<script src="js/dashboard.js"></script>
+
+<script>
+    document.body.style.overflowY = "auto";
+    document.documentElement.style.overflowY = "auto";
+</script>
+<div id="toast" class="toast"></div>
+</body>
+
+</html>

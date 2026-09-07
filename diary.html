@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Expense Journal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/diary.css">
+
+</head>
+
+<body class="dark-theme">
+
+   <div class="container">
+
+        <header class="header">
+
+            <a href="index.html" class="icon">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+
+            <div class="logo">
+
+                Expense Journal
+
+            </div>
+
+            <div class="icon">
+
+                <i class="fas fa-book"></i>
+
+            </div>
+
+        </header>
+
+       <!-- Calendar Timeline -->
+
+       <section class="card">
+
+           <div class="calendar-header">
+
+               <button onclick="prevMonth()">
+                   ◀
+               </button>
+
+               <h3 id="calendarTitle">
+                   July 2026
+               </h3>
+
+               <button onclick="nextMonth()">
+                   ▶
+               </button>
+
+           </div>
+
+           <div id="calendarGrid" class="calendar-grid">
+
+           </div>
+
+       </section>
+
+
+    <main class="dashboard">
+
+        <!-- Date -->
+
+        <div class="card">
+
+            <h3 id="todayDate"></h3>
+
+        </div>
+
+
+
+        <section class="card">
+
+            <h3>Mood</h3>
+
+            <div class="mood-picker">
+
+                <button class="mood-btn active"
+                        onclick="selectMood('😊')">
+
+                    😊
+
+                </button>
+
+                <button class="mood-btn"
+                        onclick="selectMood('😁')">
+
+                    😁
+
+                </button>
+
+                <button class="mood-btn"
+                        onclick="selectMood('😎')">
+
+                    😎
+
+                </button>
+
+                <button class="mood-btn"
+                        onclick="selectMood('😐')">
+
+                    😐
+
+                </button>
+
+                <button class="mood-btn"
+                        onclick="selectMood('😔')">
+
+                    😔
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Spending -->
+
+        <div class="card">
+
+            <h3>Today's Spending</h3>
+
+            <h2 id="todaySpending">
+
+                ₹0
+
+            </h2>
+
+        </div>
+
+        <!-- Journal -->
+        <section class="card">
+
+            <h2>Today's Journal</h2>
+
+            <p class="small-text">
+
+                Write about your day...
+
+            </p>
+
+        </section>
+
+        <div class="card">
+
+            <h3>Journal</h3>
+
+            <textarea
+
+                    id="journalNote"
+
+                    class="input"
+
+                    rows="8"
+
+                    placeholder="Write your thoughts here...">
+
+</textarea>
+
+        </div>
+
+        <!-- Photos -->
+
+        <div class="card">
+
+            <h3>Photos</h3>
+
+            <input
+                    type="file"
+                    id="galleryInput"
+                    accept="image/*"
+                    multiple
+                    hidden>
+
+            <label for="galleryInput" class="upload-btn">
+
+                <i class="fas fa-images"></i>
+
+                Choose From Gallery
+
+            </label>
+
+            <br><br>
+
+            <input
+                    type="file"
+                    id="cameraInput"
+                    accept="image/*"
+                    capture="environment"
+                    hidden>
+
+            <label for="cameraInput" class="upload-btn">
+
+                <i class="fas fa-camera"></i>
+
+                Open Camera
+
+            </label>
+
+            <br><br>
+
+            <div id="photoPreview"></div>
+
+
+        </div>
+
+        <!-- Tags -->
+
+        <div class="card">
+
+            <h3>Tags</h3>
+
+            <input
+
+                    id="journalTags"
+
+                    class="input"
+
+                    placeholder="Food, Office, Family...">
+
+        </div>
+
+        <!-- Favorite -->
+
+        <div class="card">
+
+            <label>
+
+                <input
+
+                        type="checkbox"
+
+                        id="favorite">
+
+                Favorite Entry
+
+            </label>
+
+        </div>
+
+        <!-- Save -->
+
+        <button
+
+                class="btn-primary"
+
+                onclick="saveDiary()">
+
+            Save Journal
+
+        </button>
+
+        <br><br>
+
+
+
+
+        <!-- Search -->
+
+        <input
+                id="searchDiary"
+                class="input"
+                placeholder="Search journal..."
+                oninput="searchDiary()">
+        <br><br>
+
+        <!-- Timeline -->
+        <br>
+
+        <input
+                type="date"
+                id="filterDate"
+                class="input"
+                onchange="filterDiary()">
+
+        <br><br>
+        <section class="card">
+
+            <h3>📊 Mood Statistics</h3>
+
+            <canvas id="moodChart" height="220"></canvas>
+
+        </section>
+
+        <section class="card">
+
+            <h3>💸 Expense vs Mood</h3>
+
+            <canvas id="expenseMoodChart" height="220"></canvas>
+
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <div id="diaryList"></div>
+
+
+
+
+    </main>
+
+
+
+</div>
+
+<script src="js/utils.js"></script>
+<script src="js/app.js"></script>
+<script src="js/diary.js"></script>
+
+   <div id="toast" class="toast"></div>
+
+</body>
+
+</html>

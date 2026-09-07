@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Settings</title>
+
+<!-- Google Font -->
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<!-- Font Awesome -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<!-- CSS -->
+
+<link rel="stylesheet"
+href="css/style.css">
+
+<link rel="stylesheet"
+href="css/mobile.css">
+
+<link rel="stylesheet"
+href="css/theme.css">
+
+<link rel="stylesheet"
+href="css/dashboard.css">
+
+<link rel="stylesheet"
+href="css/settings.css">
+
+</head>
+
+<body class="dark-theme">
+
+<div class="container">
+
+<header class="header">
+
+<a href="index.html" class="icon">
+
+<i class="fas fa-arrow-left"></i>
+
+</a>
+
+<div class="logo">
+
+Settings
+
+</div>
+
+<div class="icon">
+
+<i class="fas fa-gear"></i>
+
+</div>
+
+</header>
+
+<main class="dashboard">
+
+<!-- =========================
+     App Settings
+========================= -->
+
+<section class="settings-card">
+
+    <h3 class="settings-title">
+
+        General Settings
+
+    </h3>
+
+    <!-- Theme -->
+
+    <div class="setting-item">
+
+        <div class="setting-label">
+
+            🌙 Dark Theme
+
+        </div>
+
+        <label class="switch">
+
+            <input
+                type="checkbox"
+                id="themeSwitch">
+
+            <span class="slider"></span>
+
+        </label>
+
+    </div>
+
+    <!-- Currency -->
+
+    <div class="setting-item">
+
+        <div class="setting-label">
+
+            💱 Currency
+
+        </div>
+
+        <select id="currency" class="setting-select">
+
+    <option value="₹">₹ INR</option>
+
+    <option value="$">$ USD</option>
+
+    <option value="€">€ EUR</option>
+
+    <option value="£">£ GBP</option>
+
+</select>
+
+    </div>
+
+    <!-- Monthly Budget -->
+
+    <div class="setting-item">
+
+        <div class="setting-label">
+
+            💰 Monthly Budget
+
+        </div>
+
+        <input
+            type="number"
+            id="monthlyBudget"
+            class="setting-select"
+            placeholder="50000">
+
+    </div>
+
+    <button
+        id="saveSettings"
+        class="action-btn primary">
+
+        <i class="fas fa-save"></i>
+
+        Save Settings
+
+    </button>
+
+</section>
+
+<!-- =========================
+     Data Management
+========================= -->
+
+<section class="settings-card">
+
+    <h3 class="settings-title">
+
+        Data Management
+
+    </h3>
+
+
+
+    <button
+        id="restoreBtn"
+        class="action-btn primary">
+
+        <i class="fas fa-upload"></i>
+
+        Restore Data
+
+    </button>
+
+    <input
+        type="file"
+        id="restoreFile"
+        accept=".json"
+        hidden>
+
+    <button
+        id="resetBtn"
+        class="action-btn danger">
+
+        <i class="fas fa-trash"></i>
+
+        Reset All Data
+
+    </button>
+
+</section>
+
+<!-- =========================
+     About App
+========================= -->
+
+<section class="settings-card">
+
+    <h3 class="settings-title">
+
+        About ExpenseTrackify
+
+    </h3>
+
+    <div class="setting-item">
+
+        <span class="setting-label">
+
+            Version
+
+        </span>
+
+        <span class="setting-value">
+
+            v1.0.0
+
+        </span>
+
+    </div>
+
+    <a href="privacy.html" class="action-btn primary">
+        <i class="fas fa-user-shield"></i>
+        Privacy Policy
+    </a>
+
+    <a href="terms.html" class="action-btn primary">
+        <i class="fas fa-file-contract"></i>
+        Terms of Use
+    </a>
+
+    
+
+    <div style="text-align:center;padding-top:20px;">
+
+        
+        <h3 style="margin-top:12px;">
+
+            ExpenseTrackify
+
+        </h3>
+
+        <p style="opacity:.75;">
+
+            Smart Expense Tracker
+
+        </p>
+
+    </div>
+
+</section>
+    <div id="confirmModal" class="confirm-modal">
+
+        <div class="confirm-box">
+
+            <h3>Delete All Data?</h3>
+
+            <p>
+                This will permanently delete all transactions and settings.
+            </p>
+
+            <div class="confirm-buttons">
+
+                <button id="cancelDelete" class="cancel-btn">
+                    Cancel
+                </button>
+
+                <button id="confirmDelete" class="delete-btn">
+                    Delete
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+</div>
+<div id="toast" class="toast"></div>
+
+<script src="js/utils.js"></script>
+
+<script src="js/app.js"></script>
+
+<script src="js/settings.js"></script>
+
+</div>
+
+
+</body>
+
+</html>
