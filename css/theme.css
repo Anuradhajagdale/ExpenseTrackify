@@ -1,0 +1,169 @@
+/* ==========================================
+   ExpenseTrackify Theme
+========================================== */
+
+/* Light Theme */
+
+.light-theme{
+
+    --background:#F5F7FB;
+
+    --card:#FFFFFF;
+
+    --text:#111827;
+
+    --text-light:#6B7280;
+
+    --primary:#14E4B5;
+
+    --secondary:#2563EB;
+
+}
+
+/* Dark Theme */
+
+.dark-theme{
+
+    --background:#0B1023;
+
+    --card:#171C36;
+
+    --text:#FFFFFF;
+
+    --text-light:#A5B4C7;
+
+    --primary:#14E4B5;
+
+    --secondary:#1E1B4B;
+
+}
+
+/* Common Card */
+
+.card{
+
+    background:var(--card);
+
+    border-radius:20px;
+
+    padding:18px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+}
+
+/* Section Title */
+
+.section-title{
+
+    font-size:22px;
+
+    font-weight:600;
+
+    color:var(--text);
+
+    margin-bottom:18px;
+
+}
+
+/* Primary Button */
+
+.btn-primary{
+
+    width:100%;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:linear-gradient(90deg,#14E4B5,#00C2FF);
+
+    color:#fff;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.btn-primary:hover{
+
+    transform:scale(.98);
+
+}
+
+/* Secondary Button */
+
+.btn-secondary{
+
+    width:100%;
+
+    height:55px;
+
+    border-radius:15px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    background:transparent;
+
+    color:var(--text);
+
+    cursor:pointer;
+
+}
+
+/* Input */
+
+.input{
+
+    width:100%;
+
+    height:55px;
+
+    background:var(--card);
+
+    border-radius:15px;
+
+    padding:15px;
+
+    color:var(--text);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    margin-bottom:15px;
+
+}
+
+/* Flex */
+
+.flex{
+
+    display:flex;
+
+}
+
+.flex-between{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.flex-center{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}

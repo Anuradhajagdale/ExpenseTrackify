@@ -1,0 +1,594 @@
+/* ==========================================
+   ExpenseTrackify Mobile Responsive
+========================================== */
+
+/* Mobile First */
+
+html{
+
+    font-size:16px;
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    width:100%;
+
+    max-width:430px;
+
+    margin:auto;
+
+    position:relative;
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+}
+
+/* Main Container */
+
+.container{
+
+width:100%;
+
+max-width:430px;
+
+margin:auto;
+
+
+}
+
+/* Header */
+
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:10px;
+
+    margin-bottom:25px;
+
+}
+
+/* Logo */
+
+.logo{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+/* Icon */
+
+.icon{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    background:var(--card);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:var(--text);
+
+    font-size:18px;
+
+}
+
+/* Cards */
+
+.card{
+
+    width:100%;
+
+    margin-bottom:20px;
+
+}
+
+/* Grid */
+
+.grid-2{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:15px;
+
+}
+
+/* Amount */
+
+.amount{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin-top:10px;
+
+}
+
+/* Text */
+
+.small-text{
+
+    font-size:14px;
+
+    color:var(--text-light);
+
+}
+
+/* Floating Button */
+
+.fab{
+
+    position:fixed;
+
+    bottom:90px;
+
+    right:20px;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    background:linear-gradient(90deg,#14E4B5,#00C2FF);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#fff;
+
+    font-size:24px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+
+    cursor:pointer;
+
+}
+
+/* Bottom Navigation */
+
+.bottom-nav{
+
+    position:fixed;
+
+    bottom:0;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:100%;
+
+    max-width:430px;
+
+    height:70px;
+
+    background:var(--card);
+
+    display:flex;
+
+    justify-content:space-around;
+
+    align-items:center;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.bottom-nav a{
+
+    color:var(--text-light);
+
+    font-size:22px;
+
+}
+
+.bottom-nav a.active{
+
+    color:var(--primary);
+
+}
+
+/* Tablet */
+
+@media (min-width:768px){
+
+    body{
+
+        max-width:430px;
+
+    }
+
+}
+
+/* Small Mobile */
+
+@media (max-width:360px){
+
+    .container{
+
+        padding:15px;
+
+    }
+
+    .amount{
+
+        font-size:24px;
+
+    }
+
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html,
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--background);
+    color:var(--text);
+    min-height:100vh;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+.container{
+    width:100%;
+    max-width:430px;
+    margin:0 auto;
+    padding:15px;
+}
+
+*{
+    max-width:100%;
+}
+
+/* ==========================================
+   Mobile Responsive
+========================================== */
+
+/* Tablet */
+
+@media (max-width:768px){
+
+.container{
+    width:100%;
+    max-width:430px;
+    margin:0 auto;
+    padding:15px;
+    overflow:hidden;
+}
+
+.summary{
+
+    display:flex;
+    gap:15px;
+    width:100%;
+    margin-bottom:20px;
+
+}
+.grid-2{
+
+    grid-template-columns:1fr;
+
+}
+
+.chart-box{
+
+    height:280px;
+
+}
+
+.fab{
+
+    right:20px;
+    bottom:90px;
+
+}
+
+}
+
+/* Mobile */
+
+@media (max-width:425px){
+
+.header{
+
+    padding:15px;
+
+}
+
+.logo{
+
+    font-size:18px;
+
+}
+
+.balance-card{
+
+    padding:20px;
+
+}
+
+.balance-amount{
+
+    font-size:28px;
+
+}
+
+.balance-info{
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.summary{
+
+    gap:15px;
+
+}
+
+.summary-card{
+
+    flex:1 1 0;
+    min-width:0;
+    width:0;
+
+    background:var(--card);
+    border-radius:20px;
+    padding:18px;
+    overflow:hidden;
+
+}
+
+.chart-box{
+
+    height:230px;
+
+}
+
+.transaction-card{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+}
+
+.transaction-right{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+}
+
+}
+
+/* iPhone SE */
+
+@media (max-width:320px){
+
+.logo{
+
+    font-size:16px;
+
+}
+
+.balance-amount{
+
+    font-size:24px;
+
+}
+
+.fab{
+
+    width:55px;
+
+    height:55px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.side-menu{
+
+    width:240px;
+
+    left:-240px;
+
+    top:0;
+
+    height:100vh;
+
+    position:fixed;
+
+    z-index:9999;
+
+    transition:.35s;
+
+}
+
+.side-menu.open{
+
+    left:0;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.bottom-nav{
+
+display:flex;
+
+}
+
+.dashboard{
+
+padding-bottom:90px;
+
+}
+
+}
+
+@media(min-width:769px){
+
+.bottom-nav{
+
+display:none;
+
+}
+
+}
+
+/* ==========================================
+   REPORTS RESPONSIVE
+========================================== */
+
+@media (max-width:768px){
+
+.dashboard{
+    padding:15px;
+}
+
+.summary{
+    display:flex;
+    gap:12px;
+    width:100%;
+}
+
+.summary-card{
+    flex:1;
+    min-width:0;
+}
+
+.summary-card{
+    width:100%;
+}
+
+.filter-section{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.filter-btn{
+    flex:1 1 45%;
+}
+
+.export-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.export-buttons button{
+    width:100%;
+}
+
+.chart-card{
+    padding:15px;
+}
+
+.chart-box{
+    height:280px;
+}
+
+.section-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:8px;
+}
+
+.analytics-grid{
+    grid-template-columns:1fr;
+}
+
+.category-item{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.progress-bar{
+    width:100%;
+}
+
+.top-category{
+    flex-direction:column;
+    gap:10px;
+}
+
+}
+
+@media (max-width:480px){
+
+.page-title{
+    font-size:22px;
+}
+
+.summary-card h2{
+
+    font-size:clamp(20px,6vw,28px);
+    overflow-wrap:anywhere;
+    word-break:break-word;
+
+}
+
+.chart-box{
+    height:240px;
+}
+
+.filter-btn{
+    flex:1 1 100%;
+}
+
+.section{
+    padding:15px;
+}
+
+}
+
+.dashboard,
+.summary,
+.summary-card{
+
+    max-width:100%;
+
+}

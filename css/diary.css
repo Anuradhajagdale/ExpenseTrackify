@@ -1,0 +1,2199 @@
+/* ==========================================
+   Expense Journal V3
+   Premium Glass UI
+   Part 1
+========================================== */
+
+:root{
+
+--primary:#7C3AED;
+--primary2:#A855F7;
+--primary3:#C084FC;
+
+--bg:#0F111A;
+--card:rgba(255,255,255,.08);
+--card2:rgba(255,255,255,.05);
+
+--border:rgba(255,255,255,.12);
+
+--text:#fff;
+--text2:#cfcfcf;
+
+--success:#22c55e;
+--warning:#f59e0b;
+--danger:#ef4444;
+
+--radius:22px;
+
+}
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+body{
+
+font-family:Poppins,sans-serif;
+
+background:
+linear-gradient(160deg,#0b0b15,#15152a,#1f1036);
+
+color:var(--text);
+
+min-height:100vh;
+
+}
+
+.container{
+
+width:100%;
+max-width:900px;
+
+margin:auto;
+
+padding:20px;
+
+}
+
+/* ========================= */
+
+.header{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:18px 22px;
+
+border-radius:22px;
+
+background:var(--card);
+
+backdrop-filter:blur(18px);
+
+border:1px solid var(--border);
+
+margin-bottom:20px;
+
+box-shadow:
+
+0 15px 35px rgba(0,0,0,.35);
+
+}
+
+.logo{
+
+font-size:24px;
+
+font-weight:700;
+
+letter-spacing:.5px;
+
+color:#fff;
+
+}
+
+.icon{
+
+width:48px;
+height:48px;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+border-radius:50%;
+
+background:rgba(124,58,237,.18);
+
+color:#fff;
+
+transition:.3s;
+
+text-decoration:none;
+
+}
+
+.icon:hover{
+
+transform:scale(1.1);
+
+background:var(--primary);
+
+}
+
+/* ========================= */
+
+.dashboard{
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+/* ========================= */
+
+.card{
+
+background:var(--card);
+
+backdrop-filter:blur(20px);
+
+border:1px solid var(--border);
+
+border-radius:22px;
+
+padding:20px;
+
+box-shadow:
+
+0 15px 30px rgba(0,0,0,.25);
+
+transition:.3s;
+
+animation:fadeUp .45s ease;
+
+}
+
+.card:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+
+0 20px 45px rgba(124,58,237,.20);
+
+}
+
+.card h2,
+.card h3{
+
+margin-bottom:12px;
+
+font-weight:600;
+
+}
+
+.small-text{
+
+color:var(--text2);
+
+line-height:1.6;
+
+}
+
+/* ========================= */
+
+.input,
+textarea{
+
+width:100%;
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,255,255,.10);
+
+border-radius:16px;
+
+padding:15px;
+
+color:#fff;
+
+font-size:15px;
+
+outline:none;
+
+transition:.3s;
+
+}
+
+textarea{
+
+resize:none;
+
+min-height:170px;
+
+}
+
+.input:focus,
+textarea:focus{
+
+border-color:var(--primary2);
+
+box-shadow:
+
+0 0 0 4px rgba(168,85,247,.15);
+
+}
+
+/* ========================= */
+
+.btn-primary{
+
+width:100%;
+
+border:none;
+
+border-radius:18px;
+
+padding:16px;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+color:#fff;
+
+background:
+
+linear-gradient(
+135deg,
+#7C3AED,
+#A855F7
+);
+
+transition:.3s;
+
+}
+
+.btn-primary:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+
+0 15px 30px rgba(124,58,237,.40);
+
+}
+
+/* ==========================================
+   Expense Journal V3
+   Premium Glass UI
+   Part 1
+========================================== */
+
+:root{
+
+--primary:#7C3AED;
+--primary2:#A855F7;
+--primary3:#C084FC;
+
+--bg:#0F111A;
+--card:rgba(255,255,255,.08);
+--card2:rgba(255,255,255,.05);
+
+--border:rgba(255,255,255,.12);
+
+--text:#fff;
+--text2:#cfcfcf;
+
+--success:#22c55e;
+--warning:#f59e0b;
+--danger:#ef4444;
+
+--radius:22px;
+
+}
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+body{
+
+font-family:Poppins,sans-serif;
+
+background:
+linear-gradient(160deg,#0b0b15,#15152a,#1f1036);
+
+color:var(--text);
+
+min-height:100vh;
+
+}
+
+.container{
+
+width:100%;
+max-width:900px;
+
+margin:auto;
+
+padding:20px;
+
+}
+
+/* ========================= */
+
+.header{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:18px 22px;
+
+border-radius:22px;
+
+background:var(--card);
+
+backdrop-filter:blur(18px);
+
+border:1px solid var(--border);
+
+margin-bottom:20px;
+
+box-shadow:
+
+0 15px 35px rgba(0,0,0,.35);
+
+}
+
+.logo{
+
+font-size:24px;
+
+font-weight:700;
+
+letter-spacing:.5px;
+
+color:#fff;
+
+}
+
+.icon{
+
+width:48px;
+height:48px;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+border-radius:50%;
+
+background:rgba(124,58,237,.18);
+
+color:#fff;
+
+transition:.3s;
+
+text-decoration:none;
+
+}
+
+.icon:hover{
+
+transform:scale(1.1);
+
+background:var(--primary);
+
+}
+
+/* ========================= */
+
+.dashboard{
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+/* ========================= */
+
+.card{
+
+background:var(--card);
+
+backdrop-filter:blur(20px);
+
+border:1px solid var(--border);
+
+border-radius:22px;
+
+padding:20px;
+
+box-shadow:
+
+0 15px 30px rgba(0,0,0,.25);
+
+transition:.3s;
+
+animation:fadeUp .45s ease;
+
+}
+
+.card:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+
+0 20px 45px rgba(124,58,237,.20);
+
+}
+
+.card h2,
+.card h3{
+
+margin-bottom:12px;
+
+font-weight:600;
+
+}
+
+.small-text{
+
+color:var(--text2);
+
+line-height:1.6;
+
+}
+
+/* ========================= */
+
+.input,
+textarea{
+
+width:100%;
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,255,255,.10);
+
+border-radius:16px;
+
+padding:15px;
+
+color:#fff;
+
+font-size:15px;
+
+outline:none;
+
+transition:.3s;
+
+}
+
+textarea{
+
+resize:none;
+
+min-height:170px;
+
+}
+
+.input:focus,
+textarea:focus{
+
+border-color:var(--primary2);
+
+box-shadow:
+
+0 0 0 4px rgba(168,85,247,.15);
+
+}
+
+/* ========================= */
+
+.btn-primary{
+
+width:100%;
+
+border:none;
+
+border-radius:18px;
+
+padding:16px;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+color:#fff;
+
+background:
+
+linear-gradient(
+135deg,
+#7C3AED,
+#A855F7
+);
+
+transition:.3s;
+
+}
+
+.btn-primary:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+
+0 15px 30px rgba(124,58,237,.40);
+
+}
+
+/* ==========================================
+   Expense Journal V3
+   Premium Glass UI
+   Part 2
+========================================== */
+
+/* ==========================
+   Calendar
+========================== */
+
+.calendar-header{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+margin-bottom:18px;
+
+}
+
+.calendar-header h3{
+
+font-size:22px;
+
+font-weight:700;
+
+margin:0;
+
+}
+
+.calendar-header button{
+
+width:46px;
+
+height:46px;
+
+border:none;
+
+border-radius:50%;
+
+cursor:pointer;
+
+background:
+
+linear-gradient(
+135deg,
+#7C3AED,
+#A855F7
+);
+
+color:#fff;
+
+font-size:18px;
+
+transition:.3s;
+
+}
+
+.calendar-header button:hover{
+
+transform:scale(1.08);
+
+box-shadow:
+
+0 10px 25px rgba(124,58,237,.45);
+
+}
+
+/* ========================= */
+
+.calendar-weekdays{
+
+display:grid;
+
+grid-template-columns:repeat(7,1fr);
+
+gap:10px;
+
+margin-bottom:10px;
+
+}
+
+.calendar-weekdays span{
+
+text-align:center;
+
+font-size:13px;
+
+font-weight:600;
+
+color:#bdbdbd;
+
+}
+
+/* ========================= */
+
+.calendar-grid{
+
+display:grid;
+
+grid-template-columns:repeat(7,1fr);
+
+gap:10px;
+
+}
+
+.calendar-empty{
+
+height:90px;
+
+}
+
+/* ========================= */
+
+.calendar-day{
+
+position:relative;
+
+min-height:90px;
+
+padding:8px;
+
+border-radius:18px;
+
+cursor:pointer;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.30s;
+
+overflow:hidden;
+
+}
+
+.calendar-day:hover{
+
+transform:translateY(-4px) scale(1.03);
+
+background:rgba(124,58,237,.18);
+
+border-color:#A855F7;
+
+}
+
+.calendar-top{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+font-size:14px;
+
+font-weight:600;
+
+margin-bottom:6px;
+
+}
+
+.calendar-mood{
+
+font-size:24px;
+
+text-align:center;
+
+margin-top:5px;
+
+}
+
+.calendar-photo{
+
+position:absolute;
+
+bottom:8px;
+
+left:8px;
+
+font-size:15px;
+
+}
+
+.calendar-spending{
+
+position:absolute;
+
+bottom:8px;
+
+right:8px;
+
+padding:4px 8px;
+
+border-radius:12px;
+
+font-size:11px;
+
+font-weight:600;
+
+background:rgba(0,0,0,.30);
+
+color:#fff;
+
+}
+
+/* ========================= */
+
+.selected-day{
+
+border:2px solid #C084FC;
+
+background:
+
+linear-gradient(
+135deg,
+rgba(124,58,237,.28),
+rgba(168,85,247,.18)
+);
+
+box-shadow:
+
+0 0 25px rgba(168,85,247,.35);
+
+}
+
+/* ========================= */
+
+.mood-green{
+
+background:
+
+linear-gradient(
+135deg,
+rgba(34,197,94,.25),
+rgba(34,197,94,.08)
+);
+
+}
+
+.mood-yellow{
+
+background:
+
+linear-gradient(
+135deg,
+rgba(245,158,11,.25),
+rgba(245,158,11,.08)
+);
+
+}
+
+.mood-red{
+
+background:
+
+linear-gradient(
+135deg,
+rgba(239,68,68,.25),
+rgba(239,68,68,.08)
+);
+
+}
+
+/* ==========================
+   Mood Picker
+========================== */
+
+.mood-picker{
+
+display:flex;
+
+justify-content:space-between;
+
+gap:12px;
+
+flex-wrap:wrap;
+
+}
+
+.mood-btn{
+
+width:58px;
+
+height:58px;
+
+border:none;
+
+border-radius:18px;
+
+cursor:pointer;
+
+font-size:28px;
+
+background:rgba(255,255,255,.08);
+
+transition:.30s;
+
+}
+
+.mood-btn:hover{
+
+transform:translateY(-6px) scale(1.10);
+
+}
+
+.mood-btn.active{
+
+background:
+
+linear-gradient(
+135deg,
+#7C3AED,
+#A855F7
+);
+
+box-shadow:
+
+0 12px 30px rgba(124,58,237,.45);
+
+animation:moodBounce .35s;
+
+}
+/* ==========================================
+   Expense Journal V3
+   Premium Glass UI
+   Part 3
+========================================== */
+
+/* ==========================
+   Photo Upload
+========================== */
+
+input[type="file"]{
+
+width:100%;
+
+padding:14px;
+
+border-radius:16px;
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,255,255,.10);
+
+color:#ddd;
+
+margin-top:10px;
+
+}
+
+#photoPreview{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fill,minmax(90px,1fr));
+
+gap:15px;
+
+margin-top:20px;
+
+}
+
+.receipt-item{
+
+position:relative;
+
+border-radius:18px;
+
+overflow:hidden;
+
+animation:fadeUp .4s ease;
+
+}
+
+.receipt-thumb,
+.receipt-item img{
+
+width:100%;
+
+height:95px;
+
+object-fit:cover;
+
+border-radius:18px;
+
+transition:.35s;
+
+cursor:pointer;
+
+}
+
+.receipt-thumb:hover,
+.receipt-item img:hover{
+
+transform:scale(1.08);
+
+}
+
+.receipt-item button{
+
+position:absolute;
+
+top:8px;
+
+right:8px;
+
+width:28px;
+
+height:28px;
+
+border:none;
+
+border-radius:50%;
+
+background:#ef4444;
+
+color:#fff;
+
+cursor:pointer;
+
+font-size:13px;
+
+transition:.25s;
+
+}
+
+.receipt-item button:hover{
+
+transform:scale(1.15);
+
+}
+<!-- ==========================
+Mood Statistics
+Paste ABOVE <div id="diaryList"></div>
+========================== -->
+
+<section class="card">
+
+    <h3>
+        📊 Mood Statistics
+    </h3>
+
+    <canvas
+            id="moodChart"
+            height="220">
+    </canvas>
+
+</section>
+
+
+
+/* ==========================
+   Timeline
+========================== */
+
+#diaryList{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+margin-top:25px;
+
+}
+
+.diary-card{
+
+background:rgba(255,255,255,.07);
+
+border:1px solid rgba(255,255,255,.10);
+
+border-radius:22px;
+
+padding:20px;
+
+transition:.35s;
+
+animation:fadeUp .45s ease;
+
+}
+
+.diary-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+
+0 18px 40px rgba(124,58,237,.28);
+
+}
+
+.diary-date{
+
+font-size:13px;
+
+color:#bdbdbd;
+
+margin-bottom:10px;
+
+}
+
+.diary-card h3{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+font-size:22px;
+
+margin-bottom:12px;
+
+}
+
+.favorite-badge{
+
+padding:5px 12px;
+
+border-radius:30px;
+
+font-size:12px;
+
+font-weight:600;
+
+background:
+
+linear-gradient(
+135deg,
+#7C3AED,
+#A855F7
+);
+
+}
+
+.journal-preview{
+
+line-height:1.8;
+
+font-size:15px;
+
+color:#f5f5f5;
+
+margin-bottom:15px;
+
+white-space:pre-wrap;
+
+word-break:break-word;
+
+}
+
+.diary-tags{
+
+display:inline-block;
+
+padding:8px 14px;
+
+border-radius:30px;
+
+font-size:13px;
+
+background:rgba(124,58,237,.15);
+
+color:#d8c3ff;
+
+margin-bottom:15px;
+
+}
+
+.photo-row{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:12px;
+
+margin-bottom:18px;
+
+}
+
+.photo-row img{
+
+width:80px;
+
+height:80px;
+
+border-radius:16px;
+
+object-fit:cover;
+
+transition:.30s;
+
+cursor:pointer;
+
+}
+
+.photo-row img:hover{
+
+transform:scale(1.08);
+
+}
+
+.timeline-actions{
+
+display:flex;
+
+gap:12px;
+
+margin-top:10px;
+
+}
+
+.timeline-actions button{
+
+flex:1;
+
+height:46px;
+
+border:none;
+
+border-radius:16px;
+
+cursor:pointer;
+
+background:
+
+linear-gradient(
+135deg,
+#7C3AED,
+#A855F7
+);
+
+color:#fff;
+
+font-size:16px;
+
+transition:.30s;
+
+}
+
+.timeline-actions button:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+
+0 12px 25px rgba(124,58,237,.35);
+
+}
+
+/* ==========================
+   Search + Filter
+========================== */
+
+#searchDiary,
+#filterDate{
+
+margin-top:15px;
+
+margin-bottom:10px;
+
+}
+
+/* ==========================================
+   Expense Journal V3
+   Part 5
+   Premium Calendar Indicators
+========================================== */
+
+function renderCalendar(){
+
+    if(!calendarGrid) return;
+
+    calendarGrid.innerHTML="";
+
+    calendarTitle.textContent=
+
+    monthNames[currentMonth]
+
+    +" "+currentYear;
+
+    const firstDay=
+
+    new Date(
+
+    currentYear,
+
+    currentMonth,
+
+    1
+
+    ).getDay();
+
+    const daysInMonth=
+
+    new Date(
+
+    currentYear,
+
+    currentMonth+1,
+
+    0
+
+    ).getDate();
+
+    for(let i=0;i<firstDay;i++){
+
+        calendarGrid.innerHTML+=
+
+        `<div class="calendar-empty"></div>`;
+
+    }
+
+    for(
+
+    let day=1;
+
+    day<=daysInMonth;
+
+    day++
+
+    ){
+
+        const date=
+
+`${currentYear}-${String(currentMonth+1).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
+
+        const diary=
+
+        diaryEntries.find(
+
+        d=>d.date===date
+
+        );
+
+        const tx=
+
+        getTransactions()
+
+        .filter(
+
+        t=>
+
+        t.date===date &&
+
+        t.type==="Expense"
+
+        );
+
+        const spending=
+
+        tx.reduce(
+
+        (sum,t)=>
+
+        sum+Number(t.amount),
+
+        0
+
+        );
+
+        let mood="";
+
+        let star="";
+
+        let photo="";
+
+        let preview="";
+
+        let color="";
+
+        if(diary){
+
+            mood=diary.mood;
+
+            star=
+
+            diary.favorite
+
+            ?"⭐":"";
+
+            photo=
+
+            diary.photos.length
+
+            ?"📷":"";
+
+            preview=
+
+            diary.note
+
+            .substring(0,18);
+
+            if(
+
+            mood==="😊"||
+
+            mood==="😁"||
+
+            mood==="😎"
+
+            ){
+
+                color="mood-green";
+
+            }
+
+            else if(
+
+            mood==="😐"
+
+            ){
+
+                color="mood-yellow";
+
+            }
+
+            else{
+
+                color="mood-red";
+
+            }
+
+        }
+
+calendarGrid.innerHTML+=`
+
+<div
+
+class="calendar-day
+
+${color}
+
+${selectedDate===date
+
+?"selected-day"
+
+:""}"
+
+onclick="openDiaryDate('${date}')">
+
+<div class="calendar-top">
+
+<strong>
+
+${day}
+
+</strong>
+
+<span>
+
+${star}
+
+</span>
+
+</div>
+
+<div class="calendar-mood">
+
+${mood}
+
+</div>
+
+${photo?
+
+`<div class="calendar-photo">
+
+📷
+
+</div>`
+
+:""}
+
+${spending?
+
+`<div class="calendar-spending">
+
+${getCurrency()}${spending}
+
+</div>`
+
+:""}
+
+${preview?
+
+`<div class="calendar-preview">
+
+${preview}...
+
+</div>`
+
+:""}
+
+</div>
+
+`;
+
+    }
+
+}
+
+/* ==========================================
+   Expense Journal V3
+   Part 6
+   Calendar Click + Auto Scroll + Edit
+========================================== */
+
+let selectedDate = "";
+
+/* ==========================
+   Open Diary From Calendar
+========================== */
+
+function openDiaryDate(date){
+
+    selectedDate = date;
+
+    renderCalendar();
+
+    const diary = diaryEntries.find(
+
+        item => item.date === date
+
+    );
+
+    if(!diary){
+
+        showToast("No Journal Found");
+
+        return;
+
+    }
+
+    editDiary(diary.id);
+
+    const card = document.getElementById(
+
+        "diary-"+diary.id
+
+    );
+
+    if(card){
+
+        card.scrollIntoView({
+
+            behavior:"smooth",
+
+            block:"center"
+
+        });
+
+    }
+
+}
+
+/* ==========================
+   Previous Month
+========================== */
+
+function prevMonth(){
+
+    currentMonth--;
+
+    if(currentMonth<0){
+
+        currentMonth=11;
+
+        currentYear--;
+
+    }
+
+    renderCalendar();
+
+}
+
+/* ==========================
+   Next Month
+========================== */
+
+function nextMonth(){
+
+    currentMonth++;
+
+    if(currentMonth>11){
+
+        currentMonth=0;
+
+        currentYear++;
+
+    }
+
+    renderCalendar();
+
+}
+
+/* ==========================
+   Timeline Card Update
+========================== */
+
+function createDiaryCard(item){
+
+    return `
+
+<div
+
+id="diary-${item.id}"
+
+class="diary-card">
+
+<div class="diary-date">
+
+📅 ${item.date}
+
+</div>
+
+<h3>
+
+${item.mood}
+
+${item.favorite
+
+?'<span class="favorite-badge">⭐ Favorite</span>'
+
+:""}
+
+</h3>
+
+<p class="journal-preview">
+
+${item.note}
+
+</p>
+
+${item.tags
+
+?`
+
+<div class="diary-tags">
+
+🏷 ${item.tags}
+
+</div>
+
+`
+
+:""}
+
+${
+item.photos.length
+
+?`
+
+<div class="photo-row">
+
+${item.photos.map(img=>`
+
+<img
+
+src="${img}"
+
+onclick="viewPhoto('${img}')">
+
+`).join("")}
+
+</div>
+
+`
+
+:""}
+
+<div class="timeline-actions">
+
+<button
+
+onclick="editDiary(${item.id})">
+
+✏ Edit
+
+</button>
+
+<button
+
+onclick="deleteDiary(${item.id})">
+
+🗑 Delete
+
+</button>
+
+<button
+
+onclick="toggleFavorite(${item.id})">
+
+⭐ Favorite
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+/* ==========================================
+   Expense Journal V3
+   Part 7 (Final)
+   Full Screen Photo Viewer
+   Premium Search
+   Date Filter
+========================================== */
+
+/* ==========================
+   Full Screen Photo
+========================== */
+
+function viewPhoto(src){
+
+    let viewer = document.getElementById("photoViewer");
+
+    if(!viewer){
+
+        viewer = document.createElement("div");
+
+        viewer.id = "photoViewer";
+
+        viewer.innerHTML = `
+
+<div class="photo-viewer">
+
+    <span class="close-photo"
+
+    onclick="closePhoto()">
+
+    ✕
+
+    </span>
+
+    <img id="viewerImage">
+
+</div>
+
+`;
+
+        document.body.appendChild(viewer);
+
+    }
+
+    document.getElementById("viewerImage").src = src;
+
+    viewer.style.display = "flex";
+
+}
+
+/* ==========================
+   Close Viewer
+========================== */
+
+function closePhoto(){
+
+    const viewer =
+
+    document.getElementById("photoViewer");
+
+    if(viewer){
+
+        viewer.style.display = "none";
+
+    }
+
+}
+
+/* ==========================
+   Search
+========================== */
+
+function searchDiary(){
+
+    const text =
+
+    document
+
+    .getElementById("searchDiary")
+
+    .value
+
+    .toLowerCase()
+
+    .trim();
+
+    const filtered =
+
+    diaryEntries.filter(item=>
+
+        item.note
+
+        .toLowerCase()
+
+        .includes(text)
+
+        ||
+
+        item.tags
+
+        .toLowerCase()
+
+        .includes(text)
+
+    );
+
+    renderDiary(filtered);
+
+}
+
+/* ==========================
+   Date Filter
+========================== */
+
+function filterDiary(){
+
+    const date =
+
+    document
+
+    .getElementById("filterDate")
+
+    .value;
+
+    if(date===""){
+
+        renderDiary();
+
+        return;
+
+    }
+
+    const filtered =
+
+    diaryEntries.filter(
+
+        item=>item.date===date
+
+    );
+
+    renderDiary(filtered);
+
+}
+
+/* ==========================
+   Initial Load
+========================== */
+
+document.addEventListener(
+
+"DOMContentLoaded",
+
+()=>{
+
+    loadTodaySpending();
+
+    renderCalendar();
+
+    renderDiary();
+
+    renderPhotos();
+
+});
+
+/* ==========================================
+   Expense Journal V3 Finished
+========================================== */
+
+console.log(
+
+"✅ Expense Journal V3 Loaded Successfully"
+
+);
+
+/* ==========================================
+   Expense Journal V3
+   Part 5 (Final CSS)
+   Add at END of diary.css
+========================================== */
+
+/* ===== Calendar Preview ===== */
+
+.calendar-preview{
+
+position:absolute;
+
+left:6px;
+
+right:6px;
+
+bottom:28px;
+
+font-size:10px;
+
+color:#ddd;
+
+overflow:hidden;
+
+white-space:nowrap;
+
+text-overflow:ellipsis;
+
+opacity:.9;
+
+}
+
+/* ===== Today Spending Badge ===== */
+
+.calendar-spending{
+
+position:absolute;
+
+right:6px;
+
+bottom:6px;
+
+font-size:10px;
+
+padding:4px 8px;
+
+border-radius:20px;
+
+background:rgba(124,58,237,.22);
+
+color:#fff;
+
+font-weight:600;
+
+}
+
+/* ===== Photo Badge ===== */
+
+.calendar-photo{
+
+position:absolute;
+
+left:6px;
+
+bottom:6px;
+
+font-size:15px;
+
+}
+
+/* ===== Favorite Badge ===== */
+
+.favorite-badge{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:6px;
+
+padding:5px 12px;
+
+border-radius:30px;
+
+background:linear-gradient(135deg,#7C3AED,#A855F7);
+
+font-size:12px;
+
+font-weight:600;
+
+margin-left:8px;
+
+}
+
+/* ===== Tags ===== */
+
+.diary-tags{
+
+display:inline-block;
+
+margin-top:12px;
+
+padding:7px 14px;
+
+border-radius:30px;
+
+background:rgba(124,58,237,.18);
+
+color:#d8c7ff;
+
+font-size:13px;
+
+}
+
+/* ===== Timeline Buttons ===== */
+
+.timeline-actions{
+
+display:flex;
+
+gap:10px;
+
+margin-top:18px;
+
+}
+
+.timeline-actions button{
+
+flex:1;
+
+height:44px;
+
+border:none;
+
+border-radius:14px;
+
+cursor:pointer;
+
+background:linear-gradient(135deg,#7C3AED,#A855F7);
+
+color:#fff;
+
+font-weight:600;
+
+transition:.30s;
+
+}
+
+.timeline-actions button:hover{
+
+transform:translateY(-3px);
+
+}
+
+/* ===== Full Screen Image ===== */
+
+#photoViewer{
+
+position:fixed;
+
+inset:0;
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(0,0,0,.88);
+
+backdrop-filter:blur(10px);
+
+z-index:99999;
+
+animation:fadeUp .25s;
+
+}
+
+.photo-viewer{
+
+position:relative;
+
+max-width:92%;
+
+max-height:92%;
+
+}
+
+.photo-viewer img{
+
+max-width:100%;
+
+max-height:90vh;
+
+border-radius:20px;
+
+box-shadow:0 20px 60px rgba(0,0,0,.5);
+
+}
+
+.close-photo{
+
+position:absolute;
+
+top:-18px;
+
+right:-18px;
+
+width:42px;
+
+height:42px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:#ef4444;
+
+color:#fff;
+
+font-size:22px;
+
+cursor:pointer;
+
+}
+
+/* ===== Search ===== */
+
+#searchDiary{
+
+margin-top:18px;
+
+}
+
+/* ===== Date Filter ===== */
+
+#filterDate{
+
+margin-top:14px;
+
+margin-bottom:10px;
+
+}
+
+/* ===== Timeline Fade ===== */
+
+.diary-card{
+
+animation:fadeUp .35s ease;
+
+}
+
+/* Premium Toast */
+
+.toast{
+
+position:fixed;
+
+left:50%;
+
+bottom:35px;
+
+transform:translateX(-50%) translateY(100px);
+
+min-width:260px;
+
+max-width:90%;
+
+padding:16px 24px;
+
+border-radius:18px;
+
+background:rgba(124,58,237,.95);
+
+backdrop-filter:blur(18px);
+
+color:#fff;
+
+font-weight:600;
+
+text-align:center;
+
+box-shadow:0 15px 35px rgba(124,58,237,.45);
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.35s ease;
+
+z-index:99999;
+
+}
+
+.toast.show{
+
+opacity:1;
+
+visibility:visible;
+
+transform:translateX(-50%) translateY(0);
+
+}
+
+/* Upload Buttons */
+
+.upload-btn{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:12px;
+
+padding:15px;
+
+margin:12px 0;
+
+border-radius:18px;
+
+cursor:pointer;
+
+font-weight:600;
+
+font-size:15px;
+
+color:#fff;
+
+background:linear-gradient(135deg,#7C3AED,#A855F7);
+
+box-shadow:0 10px 25px rgba(124,58,237,.35);
+
+transition:.3s;
+
+}
+
+.upload-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 18px 35px rgba(124,58,237,.45);
+
+}
+
+.upload-btn i{
+
+font-size:20px;
+
+}
